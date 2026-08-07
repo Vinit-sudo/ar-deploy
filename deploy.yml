@@ -1,11 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mobilebanking-rs
+  name: insurance-rs
   labels:
     app: bank
 spec:
-  replicas: 10
+  replicas: 5
   selector:
     matchLabels:
       app: bank
@@ -16,12 +16,12 @@ spec:
     spec:
       containers:
       - name: cont1
-        image: trainerreyaz/mb-image
+        image: trainerreyaz/insurance-image
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: mobilebankingservice
+  name: insuranceservice
 spec:
   type: LoadBalancer
   selector:
